@@ -136,6 +136,7 @@ export const compress = () => {
 }
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy),  serve, watch);
 export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));
+export const bundle = gulp.series(build, compress)
 
 
 export default dev;

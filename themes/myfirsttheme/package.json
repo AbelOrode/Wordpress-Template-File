@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "gulp",
-    "build": "gulp build --prod"
+    "build": "gulp build --prod",
+    "bundle": "gulp bundle --prod"
   },
   "author": "",
   "license": "ISC",
