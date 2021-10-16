@@ -1,0 +1,11 @@
+.idea
+index.php
+package-lock.json
+plugins
+upgrade
+uploads
+themes/twentynineteen
+themes/twentytwenty
+themes/twentytwentyone
+themes/myfirsttheme/dist
+themes/myfirsttheme/node_modules

@@ -1,0 +1,40 @@
+{
+  "name": "firsttheme",
+  "version": "1.0.0",
+  "description": "A theme created by Abel",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build --prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.27.5",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.1.0",
+    "node-sass": "^6.0.1",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^5.58.2",
+    "webpack-stream": "^7.0.0",
+    "yargs": "^17.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
