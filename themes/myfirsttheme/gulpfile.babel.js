@@ -1,18 +1,19 @@
-import gulp from 'gulp'
-import yargs from 'yargs'
-import cleanCSS from 'gulp-clean-css'
-import gulpif from 'gulp-if'
-import imagemin from 'gulp-imagemin'
-import del from 'del'
-import webpack from 'webpack-stream'
-import uglify from 'gulp-uglify'
-import named from 'vinyl-named'
+import gulp from "gulp"
+import yargs from "yargs"
+import cleanCSS from "gulp-clean-css"
+import gulpif from "gulp-if"
+import imagemin from "gulp-imagemin"
+import del from "del"
+import webpack from "webpack-stream"
+import uglify from "gulp-uglify"
+import named from "vinyl-named"
 import gulpSass from "gulp-sass";
 import nodeSass from "node-sass";
-import browserSync from 'browser-sync'
+import browserSync from "browser-sync"
 import sourcemaps from "gulp-sourcemaps"
-import zip from 'gulp-zip'
-
+import zip from "gulp-zip"
+import replace from "gulp-replace"
+import info from "./package.json"
 
 const server = browserSync.create();
 const sass = gulpSass(nodeSass);
@@ -114,7 +115,7 @@ export const scripts = () => {
         .pipe(gulp.dest(paths.scripts.dest))
 }
 
-/* TASK => Copy any other directory or file included in the src folder to the dist folder e.g fontawesome dir or file.txt*/
+
 export const copy = () => {
     return gulp.src(paths.other.src)
         .pipe(gulp.dest(paths.other.dest))
@@ -131,7 +132,8 @@ export const watch = () => {
 
 export const compress = () => {
     return gulp.src(paths.package.src)
-        .pipe(zip('firsttheme.zip'))
+        .pipe(replace('_themename', info.name))
+        .pipe(zip(`${info.name}.zip`))
         .pipe(gulp.dest(paths.package.dest))
 }
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy),  serve, watch);
@@ -141,4 +143,3 @@ export const bundle = gulp.series(build, compress)
 
 export default dev;
 
-/*TASKS END*/
